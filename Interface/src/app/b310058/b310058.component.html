@@ -1,0 +1,39 @@
+<input [(ngModel)]="searchStr" hidden>
+<link rel="stylesheet" href="b310058.component.css">
+<div class="container" >
+    <table class="name">
+            <tr *ngFor="let gost of gosts |search:searchStr" >
+            <p (mousemove)= "getTypeGOSTS(gost)"> <strong>ГОСТ</strong> {{gost.GOST}} <br> <strong>ТИП 3</strong></p>
+            <h4 (mousemove)= "getTypeGOSTS(gost)">
+                Настоящий стандарт распространяется на однорядные шариковые радиальные подшипники с упорным бортом и без упорного борта на наружном кольце, применяемые в приборах (приборные подшипники).
+            <br>
+            Исполнение 3 - подшипник радиальный однорядный с двумя защитными шайбами.</h4>
+            <img (mousemove)= "getTypeGOSTS(gost)" src="assets/images/cht3.png"/>
+        </table>
+    <div class="bl-scroll" style="float: right;">
+        <table class="table table-striped">
+            <thead>
+                <tr>
+                    <th scope="col">НОМЕР</th>
+                    <th scope="col">d</th>
+                    <th scope="col">D</th>
+                    <th scope="col">B</th>
+                    <th scope="col">r</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let TypeGost of TypeGosts">
+                    <td (click)= "insertFile(TypeGost)">{{TypeGost.NUMBER}}</td>
+                    <td (click)= "insertFile(TypeGost)">{{TypeGost.d}}</td>
+                    <td (click)= "insertFile(TypeGost)">{{TypeGost.d2}}</td>
+                    <td (click)= "insertFile(TypeGost)">{{TypeGost.Dmax}}</td>
+                    <td (click)= "insertFile(TypeGost)">{{TypeGost.Dmax2}}</td>
+                    <td (click)= "insertFile(TypeGost)" hidden>{{TypeGost.H}}</td>
+                    <td (click)= "insertFile(TypeGost)" hidden>{{TypeGost.r}}</td>
+                    <td (click)= "insertFile(TypeGost)"hidden>{{TypeGost.a}}</td>
+                    <td (click)= "insertFile(TypeGost)" hidden>{{TypeGost.f}}</td>        
+                </tr>
+            </tbody>
+        </table>
+</div>
+</div>

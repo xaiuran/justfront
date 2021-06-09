@@ -1,0 +1,8 @@
+/* You can add global styles to this file, and also import other style files */
+body {
+    background: url(app/back.png); 
+    background-size: 110%;
+    background-attachment: fixed; 
+    font-family: 'Montserrat', sans-serif;
+}
+

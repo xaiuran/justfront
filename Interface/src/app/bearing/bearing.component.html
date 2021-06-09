@@ -1,0 +1,38 @@
+
+<input [(ngModel)]="searchStr" hidden>
+<link rel="stylesheet" href="bearing.component.css">
+<div class="container">
+    <table class="table table-striped" >
+        <thead>
+            <tr>
+                <th scope="col">ГОСТ</th>
+                <th scope="col">ТИП</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let gost of gosts |search:searchStr">
+                <td>{{gost.GOST}}</td>
+                <td>{{gost.TYPE}}</td>
+                <td><button class="btn btn-dark" (click)= "getTypeGOSTS(gost)">Выбрать</button></td>
+            </tr>
+        </tbody>
+    </table>
+    <div class="bl-scroll">
+  <table class="table table-striped">
+        <thead>
+            <tr>
+                <th scope="col">НОМЕР</th>
+                <th scope="col">d1 мм</th>
+                <th scope="col"></th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let TypeGost of TypeGosts">
+                <td>{{TypeGost.NUMBER}}</td>
+                <td>{{TypeGost.d2}}</td>
+                <td><button class="btn btn-dark" (click)= "insertFile(TypeGost)">Вставить</button></td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+</div>

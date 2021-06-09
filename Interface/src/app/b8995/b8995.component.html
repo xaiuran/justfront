@@ -1,0 +1,50 @@
+<link rel="stylesheet" href="b8995.component.css">
+        <div class="container">
+        <table class="table table-striped" style="position:fixed; width: 20%;">
+            <!-- <div class="input-group rounded">
+                <input type="search" class="form-control rounded" placeholder="Поиск" aria-label="Search"
+                  aria-describedby="search-addon" />
+              </div> -->
+            <thead>
+                <tr>
+                    <th scope="col">ГОСТ</th>
+                    <th scope="col">ТИП</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let gost of gosts">
+                    <td>{{gost.GOST}}</td>
+                    <td>{{gost.TYPE}}</td>
+                    <td><button class="btn btn-dark" (click)= "getTypeGOSTS(gost)">Выбрать</button></td>
+                </tr>
+            </tbody>
+        </table>
+        <div class="bl-scroll">
+      <table class="table table-striped" style="width: 60%; margin-left: 400px;">
+            <thead>
+                <tr>
+                    <th scope="col">НОМЕР</th>
+                    <!-- <th scope="col">d мм</th>
+                    <th scope="col">D мм</th> -->
+                    <th scope="col">d1 мм</th>
+                    <!-- <th scope="col">D1 мм</th>
+                    <th scope="col">R мм</th>
+                    <th scope="col">H мм</th> -->
+                    <th scope="col"></th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let TypeGost of TypeGosts">
+                    <td>{{TypeGost.NUMBER}}</td>
+                    <!-- <td>{{TypeGost.d}}</td>
+                    <td>{{TypeGost.Dmax}}</td> -->
+                    <td>{{TypeGost.d2}}</td>
+                    <!-- <td>{{TypeGost.Dmax2}}</td>
+                    <td >{{TypeGost.f}}</td>
+                    <td>{{TypeGost.H}}</td> -->
+                    <td><button class="btn btn-dark" (click)= "insertFile(TypeGost)">Вставить</button></td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+    </div>

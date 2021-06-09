@@ -1,0 +1,37 @@
+<input [(ngModel)]="searchStr" hidden>
+<link rel="stylesheet" href="b36000k6.component.css">
+<div class="container" >
+    <table class="name">
+            <tr *ngFor="let gost of gosts |search:searchStr" >
+            <p (mousemove)= "getTypeGOSTS(gost)"> <strong>ГОСТ</strong> {{gost.GOST}} <br> <strong>ТИП</strong> {{gost.TYPE}}</p>
+            <h4 (mousemove)= "getTypeGOSTS(gost)">
+                Настоящий стандарт распространяется на неразъемные и разъемные однорядные радиально-упорные шариковые подшипники.
+                Подшипники 36000K6 неразъемные со скосом на наружном кольце с углом контакта = 15°.</h4>
+            <img (mousemove)= "getTypeGOSTS(gost)" src="assets/images/ch36000.png"/>
+        </table>
+    <div class="bl-scroll" style="float: right;">
+  <table class="table table-striped">
+        <thead>
+            <tr>
+                <th scope="col">НОМЕР</th>
+                <th scope="col">d</th>
+                <th scope="col">D</th>
+                <th scope="col">B/T</th>
+                <th scope="col">r</th>
+                <th scope="col">r1</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let TypeGost of TypeGosts">
+                <td (click)= "insertFile(TypeGost)">{{TypeGost.NUMBER}}</td>
+                <td (click)= "insertFile(TypeGost)">{{TypeGost.d}}</td>
+                <td (click)= "insertFile(TypeGost)">{{TypeGost.d2}}</td>
+                <td (click)= "insertFile(TypeGost)" hidden>{{TypeGost.Dmax}}</td>
+                <td (click)= "insertFile(TypeGost)">{{TypeGost.Dmax2}}</td>
+                <td (click)= "insertFile(TypeGost)">{{TypeGost.H}}</td>
+                <td (click)= "insertFile(TypeGost)">{{TypeGost.r}}</td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+</div>
