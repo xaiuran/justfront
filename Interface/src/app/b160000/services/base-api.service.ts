@@ -7,7 +7,7 @@ import { Observable } from 'rxjs';
 })
 export class BaseApiService {
 
-  private baseUrl = "http://localhost:3000"
+  private baseUrl = "https://maindiplom.herokuapp.com/"
 
   constructor(public http: HttpClient) {
 
